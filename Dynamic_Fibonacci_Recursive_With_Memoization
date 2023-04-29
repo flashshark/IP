@@ -1,0 +1,34 @@
+"```python
+def dynamic_fibonacci_recursive(n, memo={}):
+    '''
+    A dynamic programming approach to compute the nth Fibonacci number
+    using recursion and memoization.
+    -------------------------------
+    Args:
+    1. n: Integer
+        The nth Fibonacci number to calculate.
+    2. memo: Dictionary
+        The memoization cache, default is an empty dictionary.
+    -------------------------------
+    Returns:
+    The nth Fibonacci number.
+    '''
+    # Base cases
+    if n <= 0:
+        return 0
+    elif n == 1:
+        return 1
+    elif n not in memo:  # Check if the result is already in the memoization cache
+        # Store the result of the recursive call for future reference
+        memo[n-1] = dynamic_linker_recursive(n-1)
+        memo[n-2] = dynamic_linker_recursive(n-2)
+        memo[n] = memo[n-1] + memo[n-2]
+    return memo[n]
+
+if __name__ == ""__main__"":
+    n = 10
+    result = dynamic_fibonacci_recursive(n)
+    print(""The {}th Fibonacci number is: {}"".format(n, result))
+```
+
+这个代码用的是 Python 编程语言，标题为 Dynamic_Fibonacci_Recursive_With_Memoization。这段代码是一个用递归和备忘录的动态规划方法来计算斐波那契数列的第 n 项。"
